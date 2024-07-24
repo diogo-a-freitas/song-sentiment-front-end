@@ -12,7 +12,7 @@ st.set_page_config(
     page_icon="🎶",
 )
 
-with open("api/styles.css") as f:
+with open("styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 #Set Title
@@ -53,7 +53,7 @@ with st.form("my_form"):
 
             st.warning('Please write a message on the text box and select one of the options above', icon="⚠️")
 
-        elif (len(utext) < 20 and len(utext) != 0) or options == None:
+        elif (len(utext) < 50 and len(utext) != 0) or options == None:
             st.warning('Please input more than 20 characters and select one of the options above', icon="⚠️")
 
         else:
@@ -119,7 +119,7 @@ with st.form("my_form"):
             # Display the thermometer with emojis
             st.markdown(f"""
                 <style>
-                    @import url('api/styles.css');
+                    @import url('styles.css');
                 </style>
                 <div class="thermometer-container">
                     <div class="thermometer-section {color_classes[0]}" style="width: 33.33%;">
